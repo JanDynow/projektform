@@ -1,64 +1,88 @@
-*{
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    z-index: 1000;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.hidden {
+    display: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
     font-size: 20px;
 }
-.container{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+
+.container {
     width: 100%;
     height: 100vh;
     display: flex;
-
-    border:solid red 2px;
+    border: solid red 2px;
 }
-#temat{
-    position: relative;
+
+#temat {
     display: block;
     text-align: center;
     font-size: 45px;
+    border: solid aqua 2px;
+}
 
-    border:solid aqua 2px;
+.pole1 {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    border: solid lime 2px;
 }
-.pole1{
-    position: relative;
-   width: 100%;
-   height: 10%;
-   display: flex;
-   border:solid lime 2px;
-}
-#CheckboxToner{
+
+#CheckboxToner {
     flex-grow: 1;
-    margin: 5px 10px 5px 20px;
+    margin: 5px 15px 5px 30px;
 }
-#CheckboxPrzeglad{
+
+#CheckboxPrzeglad {
     flex-grow: 1;
-    margin: 5px 20px 5px 10px;
+    margin: 5px 30px 5px 15px;
 }
-.pole2{
-    position: relative;
+
+.pole2 {
     width: 100%;
     height: 50%;
     display: flex;
-    border:solid brown 2px;
+    border: solid brown 2px;
 }
-#CheckboxSerwis{
+
+#CheckboxSerwis {
     flex-grow: 1;
     flex-direction: column;
-    margin: 5px 30px 5px 20px;
+    margin: 5px 22px 5px 30px;
     align-content: center;
     height: 100%;
     min-width: 35%;
     max-width: 35%;
 }
-#DodatkowyText{
+
+#DodatkowyText {
     flex-grow: 1;
-    margin: 5px 20px 5px 30px;
+    margin: 5px 30px 5px 30px;
     min-width: 60%;
     max-width: 60%;
     width: 60%;
@@ -66,77 +90,74 @@
     max-height: 80%;
     border: solid firebrick 2px;
 }
-textarea{
-    margin: 5px 30px 50px 22px;
+
+textarea {
+    margin: 5px 30px 50px 30px;
     resize: none;
     min-width: 70%;
     max-width: 100%;
     min-height: 10%;
     max-height: 95%;
     height: 100%;
-    width: 548px;
+    width: 550px;
 }
-.zgloszenie{
-    position: relative;
+
+.zgloszenie {
     display: flex;
     height: 40%;
     width: 100%;
 }
-.pole3{
+
+.pole3 {
     display: flex;
     flex-direction: column;
     width: 40%;
     height: 100%;
-    border:solid orangered 2px;
+    border: solid orangered 2px;
 }
-/* #NS, #SlM, #SlK{
-    margin: auto;
-} */
-.pole4{
+
+.pole4 {
     width: 60%;
     max-width: 60%;
     height: 100%;
     border: solid goldenrod 2px;
     align-content: center;
 }
-#Dane{
+
+#Dane {
     display: flex;
 }
-#zglaszajacy{
+
+#zglaszajacy {
     flex-grow: 1;
-    margin: 5px 20px 5px 20px;
+    margin: 5px 30px 5px 30px;
 }
-#phone{
+
+#phone {
     flex-grow: 1;
-    margin: 5px 20px 5px 20px;
+    margin: 5px 30px 5px 30px;
 }
-form{
+
+form {
     background: rgb(198, 198, 198);
     display: flex;
     flex-direction: column;
     width: 100%;
     max-width: 100%;
 }
-/* form input{
-    border: 0;
-    margin: 20px;
-    padding: 20px;
-    outline: none;
-    font-size: 16px;
-    max-width: 100%;
-    max-height: 200%;
-} */
-.pole3 input{
-    margin: 5px 30px 0px 20px;
+
+.pole3 input {
+    margin: 5px 30px 0px 30px;
     width: 90%;
 }
-.pole4 input{
-    margin: 5px 30px 0px 20px;
+
+.pole4 input {
+    margin: 5px 30px 0px 30px;
     width: 50%;
 }
-form button{
-    margin: 5px 20px 5px 20px;
-    /* padding: 15px; */
+
+form button {
+    margin: 5px 30px 5px 30px;
     background: green;
     color: white;
     font-size: 300%;
@@ -144,14 +165,16 @@ form button{
     outline: none;
     cursor: pointer;
     border-radius: 30px;
-    width: 93%;
+    width: 90%;
     height: 60%;
 }
-.checkmark{
-    height: 24px;
-    width: 24px;
+
+.checkmark {
+    height: 20px;
+    width: 20px;
     background-color: #eee;
 }
-input:checked ~ .checkmark{
+
+input:checked ~ .checkmark {
     background-color: #2196F3;
-  }
+}

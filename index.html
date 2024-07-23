@@ -4,13 +4,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Serwisowy System Zgłoszeniowy</title>
     <link rel="stylesheet" href="style.css">
+    <!-- <style>
+        .centered {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            z-index: 1000;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hidden {
+            display: none;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style> -->
+    <script>
+        function centerElement(element) {
+            const overlay = document.createElement('div');
+            overlay.className = 'overlay';
+            document.body.appendChild(overlay);
+
+            element.classList.add('centered');
+
+            overlay.addEventListener('click', () => {
+                element.classList.remove('centered');
+                document.body.removeChild(overlay);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const elementsToCenter = [document.getElementById('message'), document.getElementById('zglaszajacy'), document.getElementById('phone')];
+
+            elementsToCenter.forEach(element => {
+                element.addEventListener('focus', () => centerElement(element));
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="container">
-        <form action="https://formsubmit.co/a48bb07224a7bc41a5d1cdce38df714e" method="POST">
-            <div id="temat"><h2>SERWISOWY SYSTEM ZGŁOSZENIOWY XERREX</h2></div>
+        <form action="https://formsubmit.co/t04092023@gmail.com" method="POST">
+            <div id="temat"><h2>SERWISOWY SYSTEM ZGŁOSZENIOWY</h2></div>
             <div class="pole1">
                 <div id="CheckboxToner">
                     <label>ZAMÓW TONER: </label>
@@ -35,13 +84,13 @@
                     <input type="checkbox" class="checkmark" name="Głośna Praca" value="tak"> <label for="GlosnaPraca">Głośna Praca</label><br>
                     <input type="checkbox" class="checkmark" name="inne(opis)" value="tak"> <label for="inne">Inne (podać w opisie dodatkowym)</label>
                 </div>
-                <div id="DodatkowyTekst">
+                <div id="DodatkowyText">
                     <textarea id="message" name="Opis Dodatkowy" rows="5" placeholder="Dodatkowa wiadomość."></textarea>
                 </div>
             </div>
             <div class="zgloszenie">
                 <div class="pole3">
-                    <input type="tex" id="NS" name="Nr Seryjny urządzenia" placeholder="Nr seryjny urządzenia:"><br>
+                    <input type="text" id="NS" name="Nr Seryjny urządzenia" placeholder="Nr seryjny urządzenia:"><br>
                     <input type="number" id="SlM" name="Stan licznika mono" placeholder="Stan licznika mono:"><br>
                     <input type="number" id="SlK" name="Stan licznika kolor" placeholder="Stan licznika kolor">
                 </div>
@@ -53,9 +102,7 @@
                     <button type="submit">Wyślij zgłoszenie</button>
                 </div>
             </div>
-            
         </form>
     </div>
-    
 </body>
 </html>
